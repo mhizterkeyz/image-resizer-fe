@@ -1,0 +1,146 @@
+.nav-tabs a.active {
+  background: transparent !important;
+  color: #f8f9fa !important;
+  border-bottom: 1px solid #343a40 !important;
+}
+.nav-tabs a {
+  color: #acadad !important;
+}
+.image {
+  width: 100%;
+  font-size: 5em;
+  text-align: center;
+  color: #f8f9fa;
+  background-color: #31363b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 5px;
+  margin: auto;
+  position: relative;
+}
+.button {
+  background-color: #168dc4;
+  color: #f8f9fa;
+  vertical-align: top;
+  padding: 8px 15px;
+  outline: none;
+}
+.group {
+  width: 100%;
+  margin-left: 10%;
+}
+.group input {
+  margin-left: -8px;
+  width: 70%;
+  padding: 8px 15px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid transparent;
+  outline: none;
+}
+.inputs {
+  display: flex;
+}
+input[type="file"] {
+  display: none;
+}
+input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.ico {
+  position: absolute;
+}
+.result-img {
+  max-height: 100%;
+  position: absolute;
+}
+div.toast-container {
+  position: fixed;
+  width: 90vw;
+  height: 100vh;
+  top: 0px;
+  left: 0;
+  z-index: -1;
+}
+.toast {
+  position: absolute;
+  z-index: 999999999999999;
+  right: 20px;
+  top: 20px;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  width: 300px;
+}
+.toast.show {
+  animation: show_slide 0.8s ease-in-out forwards;
+}
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+.toast.hide {
+  animation: hide_slide 0.8s ease-in-out forwards;
+}
+@keyframes hide_slide {
+  100% {
+    transform: translateX(200%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  0% {
+    transform: translateX(-10px);
+  }
+}
+.toast.success {
+  background-color: #6cad63;
+}
+.toast.error {
+  background-color: #ac492b;
+}
+.screen:not(.active) {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+}
+.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+div.jumbotron {
+  position: relative;
+}
+div.overlay {
+  background-color: #0000007a;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 4px;
+}
