@@ -20,7 +20,7 @@ const apiErrorHandler = (req, res) => {
   }
 };
 
-const apiUrl = "http://hngi-image.herokuapp.com/v1";
+const apiUrl = "https://hngi-image.herokuapp.com/v1";
 
 const app = {
   h: {
@@ -77,7 +77,7 @@ const apiCall = async (query, message) => {
 
     apiErrorHandler(req, res);
 
-    $(".result-img").attr("src", "http://" + res.url);
+    $(".result-img").attr("src", "https://" + res.url);
     toast.success(
       "Image " + message + " successfully. Right click on image to download",
       5000
