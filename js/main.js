@@ -40,7 +40,11 @@ $(".crop-btn").click(handleCrop);
 $(".rotate-btn").click(handleRotate);
 
 const liveUseUrl =
-  window.location.protocol + "//" + window.location.host + "/assets/";
+  window.location.protocol +
+  "//" +
+  window.location.host +
+  "/image-resizer-fe/assets/";
+console.log(liveUseUrl);
 
 //  Resized examples
 [
@@ -57,7 +61,6 @@ const liveUseUrl =
       .eq(i)
       .attr("src", "https://" + url);
   } catch (error) {
-    toast.error(error.message);
     //  sample failed. do nothing
   }
 });
