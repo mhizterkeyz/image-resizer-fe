@@ -4,10 +4,13 @@ const navigation = () => {
   $(locationHash).addClass("active");
   if (locationHash === "#crop") {
     $(".crop").addClass("active");
+    $(".crop-room").addClass("active");
   } else if (locationHash === "#rotate") {
     $(".rotate").addClass("active");
+    $(".rotate-room").addClass("active");
   } else {
     $(".resize").addClass("active");
+    $(".resize-room").addClass("active");
   }
 };
 window.onhashchange = navigation;
@@ -70,13 +73,13 @@ const app = {
 
 const api = app;
 
-const apiCall = async (query, message) => {
+const apiCall = async (query, message, ret = false) => {
   try {
     const req = await api.post(apiUrl + query);
     const res = await req.json();
 
     apiErrorHandler(req, res);
-
+    if (ret) return res.url;
     $(".result-img").attr("src", "https://" + res.url);
     toast.success(
       "Image " + message + " successfully. Right click on image to download",

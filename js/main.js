@@ -38,3 +38,68 @@ document
 $(".resize-btn").click(handleResize);
 $(".crop-btn").click(handleCrop);
 $(".rotate-btn").click(handleRotate);
+
+const liveUseUrl =
+  window.location.protocol + "//" + window.location.host + "/assets/";
+
+//  Resized examples
+[
+  "sample.jpg",
+  "sample1.jpg",
+  "sample2.jpg",
+  "sample3.jpg",
+  "sample4.jpg",
+].forEach(async (img, i) => {
+  try {
+    const query = `/resize?height=100&&width=100&&url=${liveUseUrl + img}`;
+    const url = await apiCall(query, "rotated", true);
+    $(".resized-sample")
+      .eq(i)
+      .attr("src", "https://" + url);
+  } catch (error) {
+    toast.error(error.message);
+    //  sample failed. do nothing
+  }
+});
+
+//  Cropped examples
+[
+  "sample.jpg",
+  "sample1.jpg",
+  "sample2.jpg",
+  "sample3.jpg",
+  "sample4.jpg",
+].forEach(async (img, i) => {
+  try {
+    const query = `/crop?height=100&&width=100&&top=50&&left=50&&url=${
+      liveUseUrl + img
+    }`;
+    const url = await apiCall(query, "cropped", true);
+    $(".cropped-sample")
+      .eq(i)
+      .attr("src", "https://" + url);
+  } catch (error) {
+    toast.error(error.message);
+    //  sample failed. do nothing
+  }
+});
+
+//  Rotated examples
+[
+  "sample.jpg",
+  "sample1.jpg",
+  "sample2.jpg",
+  "sample3.jpg",
+  "sample4.jpg",
+].forEach(async (img, i) => {
+  try {
+    const query = `/rotate?angle=45&&url=${liveUseUrl + img}`;
+    const url = await apiCall(query, "rotated", true);
+    $(".rotated-sample")
+      .eq(i)
+      .attr("src", "https://" + url);
+  } catch (error) {
+    toast.error(error.message);
+    //  sample failed. do nothing
+  }
+});

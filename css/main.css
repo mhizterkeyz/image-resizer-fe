@@ -144,3 +144,43 @@ div.overlay {
   display: flex;
   border-radius: 4px;
 }
+.font-monospace {
+  font-family: "Courier New", Courier, monospace;
+}
+.info-box {
+  height: 150px;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 150px;
+  background: #31363b;
+  position: relative;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.info-box img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.info-box p {
+  position: absolute;
+  opacity: 0;
+  z-index: 999;
+  background: #00000091;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out;
+}
+.info-box:hover p,
+.info-box:focus p {
+  opacity: 1;
+}
+.row-wrap {
+  flex-flow: row wrap;
+}
