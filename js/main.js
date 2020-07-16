@@ -102,7 +102,6 @@ console.log(liveUseUrl);
       .eq(i)
       .attr("src", "https://" + url);
   } catch (error) {
-    toast.error(error.message);
     //  sample failed. do nothing
   }
 });
